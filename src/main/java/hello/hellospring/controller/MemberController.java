@@ -16,6 +16,8 @@ public class MemberController {
 
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        // AOP 적용은 proxy 기반이고, CGLIB 을 사용한다.
+        System.out.println("memberService.getClass() = " + memberService.getClass());
     }
 
     @GetMapping("/members/new")
